@@ -1,0 +1,182 @@
+page-account-questions {
+
+  .question-container {
+    background: white;
+    height: 100%;
+    width: 100%;
+  }
+
+  .header {
+    background: url("/assets/images/account_questions/header.png") no-repeat;
+    background-size: contain;
+
+
+  }
+
+  .button-inner {
+    flex-flow: column;
+    padding: 20px;
+
+  }
+
+  .square {
+    background-color: map-get($colors, primary);
+    width: 157px;
+    height: 120px;
+    padding: 0;
+    color: white;
+    margin: auto;
+    border-radius: 0px;
+    box-shadow: none;
+
+    p {
+
+    }
+  }
+
+  .paw-vet {
+    // background-color: map-get($colors, primary);
+    background-color: transparent;
+    width: 157px;
+    height: 120px;
+    padding: 0;
+    color: white;
+    margin: auto;
+    border-radius: 0px;
+    box-shadow: none;
+
+    background-image: url("../../assets/images/account_questions/vet-on-paw.png");
+    background-repeat: no-repeat;
+    //background-size: 141px 108px;
+    background-size: 157px 120px;
+
+
+    p {
+//      color: #afafaf;
+    }
+  }
+
+  .paw-ppar {
+    // background-color: map-get($colors, primary);
+    background-color: transparent;
+    width: 157px;
+    height: 120px;
+    padding: 0;
+    color: white;
+    margin: auto;
+    border-radius: 0px;
+    box-shadow: none;
+
+    background-image: url("../../assets/images/account_questions/ppar-on-paw.png");
+    background-repeat: no-repeat;
+    //background-size: 141px 108px;
+    background-size: 157px 120px;
+
+
+    p {
+      //      color: #afafaf;
+    }
+  }
+
+  .paw-fpar {
+    // background-color: map-get($colors, primary);
+    background-color: transparent;
+    width: 157px;
+    height: 120px;
+    padding: 0;
+    color: white;
+    margin: auto;
+    border-radius: 0px;
+    box-shadow: none;
+
+    background-image: url("../../assets/images/account_questions/bowl-on-paw.png");
+    background-repeat: no-repeat;
+    //background-size: 141px 108px;
+    background-size: 157px 120px;
+
+
+    p {
+      //      color: #afafaf;
+    }
+  }
+
+  .paw-breeder {
+    // background-color: map-get($colors, primary);
+    background-color: transparent;
+    width: 157px;
+    height: 120px;
+    padding: 0;
+    color: white;
+    margin: auto;
+    border-radius: 0px;
+    box-shadow: none;
+
+    background-image: url("../../assets/images/account_questions/breeder-on-paw.png");
+    background-repeat: no-repeat;
+    //background-size: 141px 108px;
+    background-size: 157px 120px;
+
+
+    p {
+      //      color: #afafaf;
+    }
+  }
+
+  .paw-ra {
+    // background-color: map-get($colors, primary);
+    background-color: transparent;
+    width: 157px;
+    height: 120px;
+    padding: 0;
+    color: white;
+    margin: auto;
+    border-radius: 0px;
+    box-shadow: none;
+
+    background-image: url("../../assets/images/account_questions/breeder-on-paw.png");
+    background-repeat: no-repeat;
+    //background-size: 141px 108px;
+    background-size: 157px 120px;
+
+
+    p {
+      //      color: #afafaf;
+    }
+  }
+
+
+  .paw-bottom {
+     color: #858585;
+     text-align: center;
+     vertical-align: top;
+  }
+
+  .vet {
+    margin: 0 auto;
+    display: block;
+    width: 46px;
+    height: 41px;
+  }
+
+  .litter {
+    margin: 0 auto;
+    display: block;
+    width: 46px;
+    height: 42px;
+  }
+  .parent {
+    margin: 0 auto;
+    display: block;
+    width: 39px;
+    height: 39px;
+  }
+  .looking {
+    margin: 0 auto;
+    display: block;
+    width: 50px;
+    height: 27px;
+  }
+
+}
+
+

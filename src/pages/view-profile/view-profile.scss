@@ -1,0 +1,174 @@
+page-view-profile {
+
+  .dog-header {
+    background-size: cover;
+    opacity: 0.8;
+    height: 35%;
+    max-height: 400px;
+    min-height: 300px;
+    border-bottom: solid 1px lightgray;
+    position: relative;
+
+    .profile-middle {
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+
+      .name {
+
+        font-size: 30px;
+        color: white;
+        text-shadow: 0 0 3px rgba(0, 0, 0, 1);
+
+      }
+
+    }
+
+  }
+
+  .bottom-selection {
+
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 0;
+    margin-bottom: 20px;
+  }
+
+  .profile-header {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100px;
+    margin-left: 25px;
+
+    .profile-image {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+
+    .profile-name {
+      margin-left: 10px;
+      flex-direction: column;
+
+      .name {
+        font-size: 20px;
+        display: block;
+      }
+      .state {
+        font-style: italic;
+        display: block;
+      }
+    }
+  }
+
+  ion-textarea {
+    resize: both;
+    border: 1px solid grey;
+    height: 50px;
+  }
+
+  .bottom-section {
+
+    padding: 50px;
+    height: auto;
+    //height: -webkit-calc(100% - 158px);
+  }
+
+  .checkups {
+
+    padding-top: 10px;
+    height: auto;
+    // height: -webkit-calc(100% - 158px);
+  }
+
+  .dogs {
+
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    flex-shrink: 0;
+    overflow: scroll;
+
+    .profile-image {
+      margin-bottom: 0 !important;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 1px solid lightgrey;
+    }
+
+    .dog:first-child {
+      margin-left: 20px;
+    }
+
+    .dog {
+
+      margin: 5px;
+      min-width: 70px;
+      font-size: 12px;
+
+    }
+    .choose-pet-more {
+      min-width: 70px;
+      margin: 5px;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 2px dotted lightgrey;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+
+    }
+
+  }
+
+  .dog-card {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+  }
+
+  .top-nav-buttons {
+
+    position: absolute;
+    width: 100%;
+    margin-top: 40px;
+    margin-left: 20px;
+    padding-right: 30px;
+    color: white;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 1);
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+  }
+
+  .scroll-content {
+    padding-top: 0 !important;
+  }
+
+
+  ion-content {
+    background-color: #f2f3f8 !important;
+  }
+
+  .contact-button {
+
+    width: 300px;
+    display: block;
+    margin: 15px auto 0;
+  }
+}

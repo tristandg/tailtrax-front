@@ -1,0 +1,30 @@
+<!--
+  Generated template for the ViewDogsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<div>
+
+
+    <p class="dog-header">My Pets</p>
+
+    <div class="dogs">
+
+        <div class="dog pointer" (click)="viewDog(dog)" *ngFor="let dog of dogs">
+            <img class="profile-image" [src]="dog.pet_profile_pic"/>
+            <p>{{dog.name}}</p>
+        </div>
+
+
+        <div class="choose-pet-more pointer" (click)="addDog()">
+            Add Pet<br> +
+        </div>
+
+        <div class="empty" style="min-width: 20px"></div>
+
+
+    </div>
+
+</div>

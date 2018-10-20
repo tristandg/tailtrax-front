@@ -1,0 +1,62 @@
+<!--
+  Generated template for the AlertSettingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->¬
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Alert Settings</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="saveAlert()">
+                Send
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content no-bounce>
+
+    <div class="cell" tappable (click)="chooseRecipients()">
+        <p>Affected Pets</p>
+        <ion-icon name="arrow-forward"></ion-icon>
+    </div>
+
+    <div class="cell" tappable (click)="chooseAffectedLitters()">
+        <p>Affected Litters</p>
+        <ion-icon name="arrow-forward"></ion-icon>
+    </div>
+
+
+    <!--<div class="cell" tappable (click)="chooseRecipients()">-->
+    <!--<p>When to Send</p>-->
+    <!--<ion-datetime></ion-datetime>-->
+    <!--</div>-->
+
+    <div class="cell" tappable>
+        <p>Flag as Urgent</p>
+        <ion-toggle [(ngModel)]="urgent"></ion-toggle>
+    </div>
+
+
+    <div class="cell" (click)="chooseWhereToSend()">
+        <p>Where to send</p>
+        <ion-icon name="arrow-forward"></ion-icon>
+    </div>
+
+
+    <div class="cell gray">
+        <p>Repeats</p>
+        <ion-toggle [disabled]="true"></ion-toggle>
+    </div>
+
+
+    <div class="cell gray">
+        <p>Repeat Settings</p>
+        <p>Annually on Jan. 4</p>
+    </div>
+
+
+</ion-content>

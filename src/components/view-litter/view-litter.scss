@@ -1,0 +1,34 @@
+view-litter {
+
+  .parents-header {
+
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .profile-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid lightgrey;
+  }
+
+  .parents {
+
+    display: flex;
+    flex-direction: row;
+
+    text-align: center;
+    .mother {
+      flex-direction: column;
+      margin-left: 5px;
+    }
+    .father {
+      flex-direction: column;
+      margin-right: 5px;
+
+    }
+
+  }
+
+}

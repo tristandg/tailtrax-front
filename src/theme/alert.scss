@@ -1,0 +1,58 @@
+.alert {
+  .main-card {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 648px;
+    max-width: 648px;
+
+    border-radius: 5px;
+    padding: 6px;
+    ion-card-content {
+      padding: 10px 10px 10px 10px;
+    }
+  }
+
+  .profile-header {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 55px;
+
+    .left {
+      margin-left: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .right {
+      color: grey;
+      margin-right: 10px;
+
+    }
+
+    .profile-image {
+      border: solid 1px lightgrey;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .profile-name {
+      margin-left: 10px;
+      flex-direction: column;
+
+      .name {
+        font-size: 18px;
+        display: block;
+      }
+      .handle {
+        color: grey;
+        display: block;
+      }
+    }
+  }
+
+}

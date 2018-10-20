@@ -1,0 +1,107 @@
+page-signup {
+
+  .logo {
+    margin: 0 auto;
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .background {
+    background: url("/assets/images/registration/registration-background.png") no-repeat;
+    background-size: cover;
+    height: 100%;
+  }
+
+  .signup-button {
+    margin: 0 auto;
+    width: 325px;
+    display: block;
+    border-radius: 0px;
+    box-shadow: none;
+  }
+
+  .name {
+    background-image: url("/assets/person.png");
+    background-repeat: no-repeat;
+    background-position: 10px;
+    background-size: 21px;
+    padding-left: 50px !important;
+    width: 325px;
+    margin: 0 auto;
+    height: 40px;
+    display: block;
+    border: gray solid 1px !important;
+  }
+
+  .email {
+    background-image: url("/assets/mail.png");
+    background-repeat: no-repeat;
+    background-position: 10px;
+    background-size: 21px;
+    padding-left: 50px !important;
+    width: 325px;
+    margin: 0 auto;
+    height: 40px;
+    display: block;
+    border: none;
+    border-left: gray solid 1px !important;
+    border-right: gray solid 1px !important;
+    border-bottom: gray solid 1px !important;
+  }
+
+  .password {
+    background-image: url("/assets/password.png");
+    background-repeat: no-repeat;
+    background-position: 10px;
+    background-size: 21px;
+    padding-left: 50px !important;
+    border: none;
+    border-left: gray solid 1px !important;
+    border-right: gray solid 1px !important;
+    border-bottom: gray solid 1px !important;
+    width: 325px;
+    margin: 0 auto;
+    height: 40px;
+    display: block;
+  }
+
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background-color: gray;
+    color: white;
+  }
+
+  .center-middle {
+    margin: auto;
+  }
+
+
+  .facebook-button {
+
+    margin-top: 40px !important;
+    margin: auto;
+    width: 253px;
+    height: 40px;
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .remember-me {
+    color: white;
+    margin-top: 40px;
+
+  }
+
+  .already-have-account {
+
+    margin-top: 10px;
+  }
+
+}

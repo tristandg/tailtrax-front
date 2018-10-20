@@ -1,0 +1,24 @@
+page-email-confirmation {
+
+  .paw {
+    margin-top: 25% !important;
+    margin: 0 auto;
+    display: block;
+    width: 150px;
+    height: 150px;
+  }
+
+  .message {
+    margin: 100px auto 0;
+    width: 50%;
+  }
+  .resend-button {
+    height: 60px;
+    margin: 0 auto;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0 !important;
+
+  }
+}

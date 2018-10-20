@@ -1,0 +1,29 @@
+<!--
+  Generated template for the ViewLittersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<div>
+
+    <p class="dog-header">My Litters</p>
+
+    <div class="dogs">
+
+        <div class="dog pointer" (click)="viewLitter(litter)" *ngFor="let litter of litters">
+            <img class="profile-image" [src]="litter.pet_mom.pet_profile_pic"/>
+            <p>{{litter.pet_mom.name}}'s Family</p>
+        </div>
+
+
+        <div class="choose-pet-more pointer" (click)="addLitter()">
+            Add Litter <br> +
+        </div>
+
+        <div class="empty" style="min-width: 20px"></div>
+
+    </div>
+
+</div>

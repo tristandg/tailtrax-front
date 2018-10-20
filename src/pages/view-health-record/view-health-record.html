@@ -1,0 +1,23 @@
+<!--
+  Generated template for the ViewHealthRecordPage page.
+
+  See http://ionicframework.com/docs/ponents/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Health Record</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <p>Check In Date: {{healthRecord.check_in_date | date}}</p>
+    <p>Notes: {{healthRecord.condition_notes}}</p>
+
+    <p *ngIf="healthRecord.medication !== null">Medication: {{healthRecord.medication.name}}</p>
+    <p *ngIf="healthRecord.vaccine !== null"> Vaccine: {{healthRecord.vaccine.name}}</p>
+</ion-content>

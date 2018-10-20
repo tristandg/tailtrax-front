@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "561792100944",
+    "firebase_url": "https://tailtrax-1535990554887.firebaseio.com",
+    "project_id": "tailtrax-1535990554887",
+    "storage_bucket": "tailtrax-1535990554887.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561792100944:android:61a98e764809bc89",
+        "android_client_info": {
+          "package_name": "com.tailtrax.TailTrax"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561792100944-tm4bi6egffrsu61lrtrm5560d13gmlg5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDayRKU1csKz0AHqnfqzKg_cQi_LBxCrKw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

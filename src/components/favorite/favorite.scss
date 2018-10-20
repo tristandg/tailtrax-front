@@ -1,0 +1,14 @@
+favorite {
+
+  .likes {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+
+    span {
+      margin-right: 5px;
+      font-size: 14px;
+    }
+  }
+}

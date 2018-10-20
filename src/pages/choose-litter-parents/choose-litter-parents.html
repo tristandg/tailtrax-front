@@ -1,0 +1,86 @@
+<!--
+  Generated template for the ChooseLitterParentsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Choose Parents</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div class="parents">
+
+        <div class="dad" (click)="chooseDad()">
+
+            <img  *ngIf="father === null" class="dog-image" src="/assets/dog.png"/>
+            <img  *ngIf="father !== null" class="dog-image" [src]="father.pet_profile_pic"/>
+
+            <div *ngIf="father === null" class="choose">
+
+                <h3>Choose</h3>
+                <h3>Father</h3>
+
+            </div>
+
+
+            <div *ngIf="father !== null">
+                <span class="name">{{father.name}}</span>
+                <span class="state">{{father.birthday | birthday}}</span>
+            </div>
+
+        </div>
+
+        <div class="add">
+
+            <ion-icon name="add"></ion-icon>
+
+        </div>
+
+        <div class="mom" (click)="chooseMom()">
+
+            <img  *ngIf="mother === null" class="dog-image" src="/assets/dog.png"/>
+            <img  *ngIf="mother !== null" class="dog-image" [src]="mother.pet_profile_pic"/>
+
+            <div *ngIf="mother === null" class="choose">
+
+                <h3>Choose</h3>
+                <h3>Mother</h3>
+
+            </div>
+
+
+            <div *ngIf="mother !== null">
+                <span class="name">{{mother.name}}</span>
+                <span class="state">{{mother.birthday | birthday}}</span>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="puppy">
+
+        <img class="dog-image" [src]="puppy.pet_profile_pic"/>
+
+        <div class="puppy-info">
+            <span class="name">{{puppy.name}}</span>
+            <span class="state">{{puppy.birthday | birthday}}</span>
+        </div>
+
+    </div>
+
+
+    <button (click)="createLitter()" ion-button class="save-litter bottom-button"
+            [disabled]="mother == null || father == null">Create Litter
+    </button>
+
+</ion-content>

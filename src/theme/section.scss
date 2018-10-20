@@ -1,0 +1,43 @@
+
+.selector {
+
+  width: 90%;
+  margin: 0 auto;
+
+  button:last-child {
+    border-right: none !important;
+  }
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  .selector-inactive {
+    background-color: rgba(232, 232, 238, 0.9);
+    color: black;
+  }
+
+  .selector-active {
+    background-color: rgba(21, 20, 16, 0.9);
+    color: white;
+  }
+
+  .selector-button:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .selector-button:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  .selector-button {
+    font-size: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 0;
+    border-right: 1px solid lightgrey;
+    margin: 0 !important;
+    width: 100%;
+    height: 100% !important;
+  }
+}

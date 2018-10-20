@@ -1,0 +1,38 @@
+page-choose-user {
+
+  ion-content {
+    background-color: #f2f3f8 !important;
+  }
+
+
+  .dog-item {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 70px;
+
+    .dog-image {
+      object-fit: cover;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 1px solid gray;
+    }
+
+    .dog-info {
+      margin-left: 10px;
+      flex-direction: column;
+
+      .name {
+        font-size: 18px;
+        display: block;
+      }
+      .handle {
+        color: grey;
+        display: block;
+      }
+    }
+  }
+
+}

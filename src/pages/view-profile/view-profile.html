@@ -1,0 +1,132 @@
+<!--
+  Generated template for the ViewDogPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content no-bounce fullscreen>
+
+
+    <div class="dog-header"
+         [style.background-image]="user.profile_image !== '/assets/profile.png' ? 'url(' + user.profile_image + ')': ''"
+         [style.background-color]="user.profile_image !== '/assets/profile.png' ? 'none': '#68bf02'">
+
+        <div class="top-nav-buttons">
+            <p (click)="navCtrl.pop()">Back</p>
+
+            <p *ngIf="userProvider.getUser().id === user.id" (click)="updateProfilePicture()">
+                Edit Photo
+            </p>
+
+        </div>
+
+        <div class="profile-middle" *ngIf="user.role === 'pet_parent' || user.role === 'litter_administrator'">
+
+            <span class="name">{{user.first_name}} {{user.last_name}}</span>
+
+        </div>
+
+        <div class="profile-middle" *ngIf="user.role === 'vet'">
+
+            <span class="name" *ngIf="business.length !==0">{{business[0].name}}</span>
+
+        </div>
+
+
+        <div class="selector bottom-selection" *ngIf="this.user.role === 'pet_parent'">
+
+            <button (click)="select('profile')" class="selector-button"
+                    [ngClass]="{'selector-active': activeSelection == 'profile', 'selector-inactive': activeSelection !== 'profile'}">
+                Profile
+            </button>
+            <button (click)="select('pets')" class="selector-button"
+                    [ngClass]="{'selector-active': activeSelection == 'pets', 'selector-inactive': activeSelection !== 'pets'}"
+            >Pets
+            </button>
+            <button (click)="follow()" class="selector-button"
+                    [ngClass]="{'selector-active': activeSelection == 'about', 'selector-inactive': activeSelection !== 'about'}">
+                <span *ngIf="following !==null">Unfollow</span>
+                <span *ngIf="following ===null">Follow</span>
+            </button>
+        </div>
+
+
+        <div class="selector bottom-selection" *ngIf="this.user.role === 'litter_administrator'">
+
+            <button (click)="select('profile')" class="selector-button"
+                    [ngClass]="{'selector-active': activeSelection == 'profile', 'selector-inactive': activeSelection !== 'profile'}">
+                Profile
+            </button>
+            <button (click)="select('pets')" class="selector-button" [disabled]="true"
+                    [ngClass]="{'selector-active': activeSelection == 'pets', 'selector-inactive': activeSelection !== 'pets'}"
+            >Reviews
+            </button>
+            <button (click)="follow()" class="selector-button"
+                    [ngClass]="{'selector-active': activeSelection == 'about', 'selector-inactive': activeSelection !== 'about'}">
+                <span *ngIf="following !==null">Unfollow</span>
+                <span *ngIf="following ===null">Follow</span>
+            </button>
+        </div>
+
+        <div class="selector bottom-selection" *ngIf="this.user.role === 'vet'">
+
+            <button (click)="select('profile')" class="selector-button"
+                    [ngClass]="{'selector-active': activeSelection == 'profile', 'selector-inactive': activeSelection !== 'profile'}">
+                Profile
+            </button>
+            <button (click)="select('pets')" class="selector-button" [disabled]="true"
+                    [ngClass]="{'selector-active': activeSelection == 'reviews', 'selector-inactive': activeSelection !== 'reviews'}">
+                Reviews
+            </button>
+            <button (click)="follow()" class="selector-button"
+                    [ngClass]="{'selector-active': activeSelection == 'follow', 'selector-inactive': activeSelection !== 'follow'}">
+                Follow
+            </button>
+        </div>
+
+    </div>
+
+
+    <div *ngIf="activeSelection === 'profile'">
+
+        <div class="cell" tappable *ngIf="user.role === 'vet'">
+            <p>Location</p>
+            <div *ngIf="business.length !==0">
+                <span>{{business[0].city}}, {{business[0].state}}</span>
+            </div>
+        </div>
+
+        <div class="cell" tappable *ngIf="user.role === 'pet_parent' || user.role === 'litter_administrator'">
+            <p>Location</p>
+            <div>
+                <span>{{user.city}}, {{user.state}}</span>
+            </div>
+        </div>
+
+        <div class="cell" tappable *ngIf="user.role === 'vet' || user.role === 'litter_administrator'"
+             (click)="contact()">
+            <p>Contact</p>
+            <ion-icon name="arrow-forward"></ion-icon>
+
+        </div>
+
+
+        <button class="contact-button" text-center ion-button>Contact</button>
+    </div>
+
+    <div *ngIf="activeSelection === 'pets'">
+        <div class="dogs">
+
+            <div class="dog pointer" (click)="viewDog(dog)" *ngFor="let dog of dogs">
+                <img class="profile-image" [src]="dog.pet_profile_pic"/>
+                <p>{{dog.name}}</p>
+            </div>
+
+            <div class="empty" style="min-width: 20px"></div>
+
+
+        </div>
+
+    </div>
+
+</ion-content>

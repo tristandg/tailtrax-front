@@ -1,0 +1,6 @@
+<!-- Generated template for the FavoriteComponent component -->
+<div (click)="like()" class="likes">
+    <span>{{post.social_likes.length}}</span>
+    <ion-icon *ngIf="liked" class="heart" name="heart"></ion-icon>
+    <ion-icon *ngIf="!liked" class="heart" name="heart-outline"></ion-icon>
+</div>

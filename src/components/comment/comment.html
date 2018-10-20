@@ -1,0 +1,34 @@
+<!-- Generated template for the CommentComponent component -->
+<div>
+
+    <div class="comments">
+        <div class="header">
+            <p class="pointer" (click)="viewComments()"> {{post.social_comments.length}} comments</p>
+            <favorite class="pointer" [post]="post"></favorite>
+        </div>
+        <div class="view-comments" *ngIf="showing === true">
+            <div class="message-box" id="message-box">
+                <ion-textarea placeholder="Comment..." [(ngModel)]="commentText"></ion-textarea>
+                <button ion-button class="send-button" (click)="postComment()"
+                        [disabled]="commentText.trim().length === 0">
+                    Post
+                </button>
+            </div>
+            <div class="message-left" *ngFor="let comment of post.social_comments">
+
+                <img class="profile-image" [src]="comment.user.profile_image"/>
+                <b class="username">{{comment.user.username}}</b>
+
+
+                <div class="message-body">
+                    <p>
+                        {{comment.content}}
+
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

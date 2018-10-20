@@ -1,0 +1,31 @@
+<!--ser--->
+
+<ion-header>
+
+
+    <ion-navbar>
+        <ion-title>My Dashboard</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content no-bounce>
+
+    <div class="cell" tappable (click)="viewAlerts()">
+        <p>Alerts</p>
+        <ion-icon name="arrow-forward"></ion-icon>
+    </div>
+
+    <div class="content-container">
+
+        <view-dogs *ngIf="userProvider.getUser().role == 'pet_parent'"></view-dogs>
+        <view-litters *ngIf="userProvider.getUser().role == 'litter_administrator'"></view-litters>
+        <find-service *ngIf="userProvider.getUser().role == 'pet_parent'"></find-service>
+        <view-tools *ngIf="userProvider.getUser().role == 'vet'"></view-tools>
+
+    </div>
+
+
+</ion-content>
+
+

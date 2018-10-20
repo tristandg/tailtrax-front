@@ -1,0 +1,114 @@
+<!--
+  Generated template for the ViewDogPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content no-bounce>
+
+
+    <div class="dog-header" [style.background-image]="'url(' + dog.pet_profile_pic + ')'">
+
+        <div class="top-nav-buttons">
+            <p (click)="navCtrl.pop()">Back</p>
+
+            <p *ngIf="userProvider.getUser().id === dog.owner.id" (click)="updateProfilePicture()">
+                Edit Photo
+            </p>
+
+        </div>
+
+        <div class="selector bottom-selection">
+
+            <!--<button (click)="select('checkups')" class="selector-button"-->
+            <!--[ngClass]="{'selector-active': activeSelection == 'checkups', 'selector-inactive': activeSelection !== 'checkups'}">-->
+            <!--Checkups-->
+            <!--</button>-->
+            <button (click)="select('profile')" class="selector-button"
+                    [ngClass]="{'selector-active': activeSelection == 'profile', 'selector-inactive': activeSelection !== 'profile'}"
+            >Profile
+            </button>
+            <button (click)="select('health')" class="selector-button"
+                    [ngClass]="{'selector-active': activeSelection == 'health', 'selector-inactive': activeSelection !== 'health'}"
+            >Health
+            </button>
+            <button (click)="select('litter')" class="selector-button"
+                    [ngClass]="{'selector-active': activeSelection == 'litter', 'selector-inactive': activeSelection !== 'litter'}">
+                Litter
+            </button>
+        </div>
+    </div>
+
+
+    <div scrollY="true" *ngIf="activeSelection === 'profile'">
+
+        <div class="cell">
+            <p>Name</p>
+            <p>{{dog.name}}</p>
+        </div>
+        <div class="cell">
+            <p>Birth Date</p>
+            <p>{{dog.birthday | birthday}}</p>
+        </div>
+        <div class="cell">
+            <p>Breed</p>
+            <p>{{dog.breed}}</p>
+        </div>
+    </div>
+
+    <div class="checkups" *ngIf="activeSelection === 'checkups'">
+
+        <ion-list>
+            <ion-item *ngFor="let record of healthRecords" (click)="viewHealthRecord(record)">
+
+                {{record.check_in_date | date}}
+            </ion-item>
+
+        </ion-list>
+
+        <ion-fab bottom right>
+            <button ion-fab (click)="addHealthRecord()">
+                <ion-icon name="heart"></ion-icon>
+            </button>
+        </ion-fab>
+
+    </div>
+
+    <div padding scrollY="true" *ngIf="activeSelection === 'health'" class="bottom-section">
+
+        <ion-list>
+
+            <ion-label>Health Notes</ion-label>
+            <ion-textarea [(ngModel)]="health_issue">
+            </ion-textarea>
+
+        </ion-list>
+        <ion-list>
+
+            <ion-label>Nutrition</ion-label>
+            <ion-textarea [(ngModel)]="food">
+            </ion-textarea>
+
+
+        </ion-list>
+        <ion-list>
+
+            <ion-label>Medications</ion-label>
+            <ion-textarea [(ngModel)]="supplemental">
+            </ion-textarea>
+
+        </ion-list>
+
+        <button ion-button class="bottom-button" [disabled]="!informationChanged()" (click)="updateDog()">
+            Save
+        </button>
+
+    </div>
+
+    <div padding *ngIf="activeSelection === 'litter'" class="bottom-section">
+        <view-litter [dog]="dog"></view-litter>
+    </div>
+
+</ion-content>

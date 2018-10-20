@@ -1,0 +1,25 @@
+page-settings {
+
+  ion-content {
+    background-color: #f2f3f8 !important;
+  }
+
+  .profile-picture-header {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    .profile-image {
+      border: 1px grey solid;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: white;
+    }
+  }
+
+}

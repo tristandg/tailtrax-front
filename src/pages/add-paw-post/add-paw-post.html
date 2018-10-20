@@ -1,0 +1,55 @@
+<!--
+  Generated template for the AddPawPostPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+
+        <ion-buttons start>
+            <button ion-button icon-only (click)="viewController.dismiss()">
+                Close
+            </button>
+        </ion-buttons>
+
+        <ion-title>New Post</ion-title>
+
+        <ion-buttons end>
+            <button (click)="post()" ion-button>Post</button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+    <div *ngIf="postMode === 'text'">
+        <ion-textarea [(ngModel)]="textPost" placeholder="What's on your mind?"></ion-textarea>
+    </div>
+    <div *ngIf="postMode === 'photo'">
+
+        <div *ngIf="imageToPost ===''" class=" click-to-add-image" (click)="addPostImage()">
+            <h3>Add Image</h3>
+        </div>
+
+        <div *ngIf="imageToPost !==''" (click)="addPostImage()">
+
+            <img [src]="imageToPost">
+
+        </div>
+
+
+        <ion-textarea [(ngModel)]="caption" placeholder="Your great caption."></ion-textarea>
+
+    </div>
+
+
+    <ion-segment [(ngModel)]="postMode">
+        <ion-segment-button value="text">Text</ion-segment-button>
+        <ion-segment-button value="photo">Photo</ion-segment-button>
+    </ion-segment>
+</ion-content>

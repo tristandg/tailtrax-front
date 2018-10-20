@@ -1,0 +1,92 @@
+<!--
+  Generated template for the AddDogPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-buttons start>
+            <button ion-button icon-only (click)="viewController.dismiss()">
+                Close
+            </button>
+        </ion-buttons>
+        <ion-title>Add Dog</ion-title>
+
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding text-center no-bounce>
+
+    <form [formGroup]="addDogForm">
+
+        <ion-item text-center>
+
+            <img #image src="/assets/dog.png" class="dog-image" (click)="chooseImage(image)">
+
+        </ion-item>
+
+        <ion-list>
+            <ion-item>
+
+                <ion-input type="text" placeholder="* Name" class="no-margin-left" formControlName="name"
+                           [formError]="addDogForm.get('name')" enterClose></ion-input>
+            </ion-item>
+
+            <ion-item>
+
+                <ion-label>* Birthday</ion-label>
+                <ion-datetime displayFormat="MM/DD/YYYY" formControlName="birthday"></ion-datetime>
+            </ion-item>
+
+            <ion-item>
+
+                <ion-label>* Gender</ion-label>
+                <ion-select formControlName="gender">
+                    <ion-option value="0">Female</ion-option>
+                    <ion-option value="1">Male</ion-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item>
+
+                <ion-label>* Color</ion-label>
+                <ion-select formControlName="color">
+                    <ion-option *ngFor="let color of colors" [value]="color">{{color.name}}</ion-option>
+                </ion-select>
+            </ion-item>
+
+
+            <button ion-item (click)="chooseBreed()">
+
+                <ion-label *ngIf="breed == null" >* Breed</ion-label>
+                <ion-label *ngIf="breed != null">{{breed.name}}</ion-label>
+
+            </button>
+
+            <ion-item>
+                <ion-input type="tel" placeholder="Microchip #" class="no-margin-left"
+                           formControlName="microchip" [nextInput]="akcRegInput"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-input #akcRegInput type="tel" placeholder="AKC Reg. Number" class="no-margin-left"
+                           formControlName="akc_reg_number" enterClose></ion-input>
+            </ion-item>
+
+
+            <ion-item>
+
+                <ion-label>AKC Reg. Date</ion-label>
+                <ion-datetime displayFormat="MM/DD/YYYY" formControlName="akc_reg_date"></ion-datetime>
+            </ion-item>
+
+        </ion-list>
+    </form>
+
+    <button [disabled]="!canSubmit()" class="bottom-button" ion-button (click)="saveDog()">Add Dog</button>
+
+</ion-content>

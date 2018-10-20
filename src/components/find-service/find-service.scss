@@ -1,0 +1,57 @@
+find-service {
+
+  .find-service {
+
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+
+  }
+
+  .all-services {
+
+    margin: 0 auto;
+
+  }
+
+  .find-services:last-child {
+    margin-bottom: 50px;
+  }
+
+  .find-services {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+
+    .service-block {
+
+      all: unset;
+      margin: 5px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+    }
+
+    .service {
+      background-image: url("/assets/map.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      min-width: 70px;
+      margin: 5px;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+
+    }
+  }
+}

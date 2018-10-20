@@ -1,0 +1,55 @@
+<!--
+  Generated template for the ViewPatientsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Patient Database</ion-title>
+
+        <ion-buttons end>
+
+            <button ion-button icon-only (click)="addPatient()">
+                New Patient
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+    <ion-searchbar #searchField
+                   [(ngModel)]="search"
+                   (ionInput)="onInput($event)"
+                   [debounce]="500">
+    </ion-searchbar>
+
+    <ion-list *ngIf="patients.length !== 0">
+
+        <ion-card *ngFor="let patient of patients" class="main-dog-card dog-item" (click)="viewPatient(patient)">
+
+
+            <div class="dog-details">
+
+                <img class="dog-image" [src]="patient.pet_profile_pic"/>
+
+                <div class="dog-info">
+
+                    <span class="name">{{patient.name}}</span>
+                    <span class="state">{{patient.birthday | birthday}}</span>
+
+                </div>
+
+            </div>
+
+        </ion-card>
+
+    </ion-list>
+
+</ion-content>
+

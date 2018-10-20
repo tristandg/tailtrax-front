@@ -1,0 +1,41 @@
+.main-dog-card.dog-item {
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  box-shadow: 0 1px 1px lightgray;
+  border-radius: 5px;
+
+  .dog-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .dog-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid gray;
+  }
+
+  .dog-info {
+    margin-left: 10px;
+    flex-direction: column;
+
+    .name {
+      font-size: 20px;
+      display: block;
+    }
+    .state {
+      font-style: normal;
+      display: block;
+    }
+  }
+}
+

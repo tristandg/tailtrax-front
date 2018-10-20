@@ -1,0 +1,17 @@
+page-view-alert {
+
+  .alert-action-buttons {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    button {
+
+      width: 100%;
+      max-width: 400px;
+    }
+
+  }
+
+}

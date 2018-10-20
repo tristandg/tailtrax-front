@@ -1,0 +1,29 @@
+.cell {
+  background-color: white !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 1px solid lightgrey;
+  height: 50px;
+
+}
+
+.cell.gray {
+  background-color: gray !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 1px solid lightgrey;
+  height: 50px;
+  color: white;
+
+}
+.cell.activated {
+  background-color: lightgrey !important;
+}

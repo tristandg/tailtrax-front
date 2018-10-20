@@ -1,0 +1,22 @@
+page-add-paw-post {
+
+  .click-to-add-image {
+
+    color:  map_get($colors, primary);
+    height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    h3 {
+
+    }
+  }
+  textarea {
+
+    resize: both;
+    height: 100px !important;
+  }
+}

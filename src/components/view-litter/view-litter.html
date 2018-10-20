@@ -1,0 +1,41 @@
+<!-- Generated template for the ViewLitterComponent component -->
+<div *ngIf="litter !==null">
+
+    <p class="parents-header">Parents</p>
+
+    <div class="parents">
+
+
+        <div class="father" (click)="viewDog(litter.pet_dad)">
+            <img class="profile-image" [src]="litter.pet_dad.pet_profile_pic"/>
+
+            <p>{{litter.pet_dad.name}}</p>
+        </div>
+
+
+        <div class="mother" (click)="viewDog(litter.pet_mom)">
+            <img class="profile-image" [src]="litter.pet_mom.pet_profile_pic"/>
+            <p>{{litter.pet_mom.name}}</p>
+        </div>
+
+
+    </div>
+
+    <p class="parents-header">Siblings</p>
+
+
+    <div class="parents">
+
+        <div class="father" *ngFor="let puppy of litter.pets" (click)="viewDog(puppy)">
+
+            <div *ngIf="puppy.id !==dog.id">
+
+                <img class="profile-image" [src]="puppy.pet_profile_pic"/>
+
+                <p>{{puppy.name}}</p></div>
+
+        </div>
+
+    </div>
+
+</div>

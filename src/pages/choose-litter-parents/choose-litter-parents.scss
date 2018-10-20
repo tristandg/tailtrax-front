@@ -1,0 +1,76 @@
+page-choose-litter-parents {
+
+  h3 {
+    line-height: .4;
+  }
+
+  .save-litter {
+    margin-top: 30px !important;
+  }
+
+  .choose {
+    margin-top: 20px;
+    -webkit-tap-highlight-color: gray;
+  }
+
+  .dog-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid gray;
+  }
+
+  .name {
+    font-size: 20px;
+    display: block;
+  }
+  .state {
+    font-style: italic;
+    display: block;
+  }
+
+  .parents {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+
+    .add {
+
+      flex-direction: column;
+      margin: auto 0;
+      background-color: white;
+      display: block;
+      font-size: 30px;
+    }
+
+    .dad {
+      flex-direction: column;
+      background-color: white;
+
+    }
+
+    .mom {
+      background-color: white;
+      flex-direction: column;
+
+    }
+  }
+
+  .puppy {
+
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .puppy-info {
+      margin-top: 15px;
+      flex-direction: column;
+
+    }
+  }
+
+}

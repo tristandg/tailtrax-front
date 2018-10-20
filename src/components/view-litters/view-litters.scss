@@ -1,0 +1,61 @@
+view-litters {
+
+  .dog-header {
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+
+  }
+
+  .dogs {
+
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    flex-shrink: 0;
+    overflow: auto;
+
+    .profile-image {
+      margin-bottom: 0 !important;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 1px solid lightgrey;
+    }
+
+    .dog:first-child {
+      margin-left: 20px;
+    }
+
+    .dog {
+      margin: 5px;
+      min-width: 70px;
+      font-size: 12px;
+    }
+
+    .choose-pet-more {
+
+      min-width: 70px;
+      margin: 5px;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 2px dotted lightgrey;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+
+    }
+
+  }
+
+  .dog-card {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+  }
+
+}

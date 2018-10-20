@@ -1,0 +1,150 @@
+<!--
+  Generated template for the AccountQuestionsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-header>
+    <ion-toolbar class="bg-primary">
+        <ion-title *ngIf="phase === 1">Choose Role</ion-title>
+        <ion-title *ngIf="phase === 2">Account Information</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+    <div *ngIf="phase === 1">
+
+        <ion-grid class="margin-auto">
+
+            <ion-row class="margin-auto">
+
+                <ion-col>
+
+                    <button ion-button class="paw-vet" text-wrap (click)="selectAccountType('vet')">
+
+                        <!--<img src="/assets/images/account_questions/vet-on-paw.png" class="vet">-->
+
+
+                    </button>
+                    <p class="paw-bottom" (click)="selectAccountType('vet')">Are you a vet?</p>
+                </ion-col>
+
+                <ion-col>
+
+                    <button ion-button class="paw-ppar" text-wrap (click)="selectAccountType('parent')">
+                        <!--<img src="/assets/images/account_questions/parent.png" class="parent">-->
+
+                    </button>
+                    <p class="paw-bottom" (click)="selectAccountType('parent')">Are you a pet parent?</p>
+                </ion-col>
+
+
+            </ion-row>
+            <ion-row class="margin-auto">
+
+                <ion-col>
+
+                    <button ion-button class="paw-breeder" text-wrap (click)="selectAccountType('breeder')">
+
+                        <!--<img src="/assets/images/account_questions/litter.png" class="litter">-->
+
+                        <!--<p>Do you manage a litter?</p>-->
+
+                    </button>
+                    <p class="paw-bottom" (click)="selectAccountType('breeder')">Are you a breeder?</p>
+                </ion-col>
+
+                <ion-col>
+
+
+                    <button ion-button class="paw-ra" text-wrap (click)="selectAccountType('rescue-admin')">
+
+                        <!--<img src="/assets/images/account_questions/looking.png" class="looking">
+
+                        <p>Are you looking for a pet?</p>-->
+
+                    </button>
+                    <p class="paw-bottom" (click)="selectAccountType('rescue-admin')">Are you a rescue administrator?</p>
+
+                </ion-col>
+
+            </ion-row>
+
+            <ion-row class="margin-auto">
+
+                <ion-col>
+
+
+                    <button ion-button class="paw-fpar" text-wrap (click)="selectAccountType('looking')">
+
+                        <!--<img src="/assets/images/account_questions/looking.png" class="looking">
+
+                        <p>Are you looking for a pet?</p>-->
+
+                    </button>
+                    <p class="paw-bottom" (click)="selectAccountType('looking')">Future pet owner?</p>
+
+                </ion-col>
+
+            </ion-row>
+
+
+        </ion-grid>
+        <div class="help-message" text-center>
+
+            <p>Not sure which applies?
+                <br>
+                <a>Get Help</a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <div *ngIf="phase === 2" style="margin-top: 20px;">
+
+        <ion-grid *ngIf="false">
+
+            <ion-row class="margin-auto">
+                <ion-col>
+                    <button ion-button class="square" text-wrap (click)="selectAccountType('looking')">
+
+                        <p>Are you a rescue?</p>
+
+                    </button>
+
+                </ion-col>
+                <ion-col>
+                    <button ion-button class="square" text-wrap (click)="selectAccountType('looking')">
+
+                        <p>Do you breed dogs?</p>
+
+                    </button>
+
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <form [formGroup]="petParentForm" *ngIf="accountType === 'parent'">
+            <input type="text" placeholder="* Username" class="default-input" formControlName="username"
+                   [formError]="petParentForm.get('username')" nextInput>
+            <input type="text" placeholder="* Address" class="default-input" formControlName="address"
+                   [formError]="petParentForm.get('address')" nextInput>
+            <input type="text" placeholder="* City" class="default-input no-top-border" formControlName="city"
+                   [formError]="petParentForm.get('city')" nextInput>
+            <input type="text" placeholder="* Home Zip" class="default-input no-top-border" formControlName="zip"
+                   [formError]="petParentForm.get('zip')" nextInput>
+            <input type="text" placeholder="* State" class="default-input no-top-border" formControlName="state"
+                   [formError]="petParentForm.get('state')" enterClose>
+        </form>
+    </div>
+
+
+
+    <button *ngIf="phase === 2" ion-button class="bottom-button-sticky" (click)="create()">Create Profile</button>
+
+</ion-content>

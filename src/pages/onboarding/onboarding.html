@@ -1,0 +1,292 @@
+<!--
+  Generated template for the OnboardingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content>
+
+
+    <div class="overview">
+
+
+        <!---->
+        <div *ngIf="phase == 1" class="instructions">
+            <p class="instruction-message" *ngIf="overview == 1">
+                Real-time health alerts for <br>pet parents
+            </p>
+
+            <p class="instruction-message" *ngIf="overview == 2">
+                Connect pets' health <br> history for veterinarians.
+            </p>
+
+            <p class="instruction-message" *ngIf="overview == 3">
+                Keep breeders connected <br> with families and follow <br> your litter's health
+            </p>
+
+            <div class="bottom-buttons">
+
+                <button ion-button (click)="next()">Next</button>
+            </div>
+        </div>
+
+        <!---->
+        <div *ngIf="phase == 2" class="sign-up-buttons">
+
+            <!--<button ion-button (click)="signIn('facebook')">Sign In with Facebook</button>-->
+            <!--<button ion-button (click)="signIn('google')">Sign In with Google</button>-->
+            <button ion-button (click)="signIn('email')">Sign In with Email</button>
+            <button ion-button (click)="signIn('facebook')">
+                Sign In with Facebook&nbsp;
+                <ion-icon name="logo-facebook"></ion-icon>
+            </button>
+            <button  ion-button class="facebook-button" (click)="signIn('google')">
+
+                Sign In With Google Plus&nbsp;
+                <ion-icon name="logo-googleplus"></ion-icon>
+            </button>
+
+
+        </div>
+
+        <!---->
+        <div *ngIf="phase == 3" class="sign-up">
+
+            <div *ngIf="signInType === 'email'">
+
+                <ion-input type="email" [(ngModel)]="email" class="email-input" placeholder="Email Address" enterClose
+                           (onEnter)="lookupEmail()" [formControl]="emailFormControl"></ion-input>
+
+                <div class="group-buttons">
+                    <button ion-button (click)="back()">Back</button>
+                    <button ion-button (click)="lookupEmail()" [disabled]="!emailFormControl.valid">Next</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div *ngIf="phase == 4" class="sign-up">
+
+            <div *ngIf="name === ''">
+
+                <ion-input type="text" [(ngModel)]="firstName" class="email-input"
+                           placeholder="First Name" [nextInput]="lastNameInput"></ion-input>
+
+                <ion-input type="text" [(ngModel)]="lastName" class="email-input"
+                           placeholder="Last name" #lastNameInput [nextInput]="usernameInput"></ion-input>
+
+                <ion-input type="email" [(ngModel)]="username" class="email-input"
+                           placeholder="Username" #usernameInput [nextInput]="passwordInput"></ion-input>
+
+                <ion-input id="autocomplete" placeholder="Enter your address"
+                           type="text" class="email-input"></ion-input>
+
+                <ion-input type="password" [(ngModel)]="password" class="email-input"
+                           placeholder="Password" #passwordInput enterClose></ion-input>
+
+
+                <div class="group-buttons">
+
+                    <button ion-button (click)="back()">Back</button>
+                    <button ion-button (click)="next()" [disabled]="!signUpFormValid()">Next</button>
+                </div>
+
+            </div>
+
+            <div *ngIf="name !== ''">
+
+                <p>Welcome back, {{name}}</p>
+
+                <ion-input type="password" [(ngModel)]="password" class="email-input"
+                           placeholder="Password" enterClose (onEnter)="login()"></ion-input>
+
+                <div class="group-buttons">
+
+                    <button ion-button (click)="back()">Back</button>
+                    <button ion-button (click)="login()">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="phase == 5" class="sign-up">
+
+            <p>Welcome, {{firstName}}! <br>Let's start by telling us a <br>little about yourself.</p>
+
+            <!--  <div class="parent-option" (click)="petLover = !petLover">
+                  <p>Pet Lover</p>
+                  <ion-toggle [checked]="petLover"></ion-toggle>
+              </div>-->
+
+            <div class="parent-option">
+                <p>Pet Lover</p>
+                <ion-toggle [disabled]="true"></ion-toggle>
+            </div>
+
+            <div class="parent-option">
+                <p>Pet Parent</p>
+                <ion-toggle [(ngModel)]="petParent"></ion-toggle>
+            </div>
+
+
+            <div class="parent-option">
+                <p>Veterinarian</p>
+                <ion-toggle
+                        [disabled]="false" [(ngModel)]="veterinarian"></ion-toggle>
+            </div>
+            <div class="parent-option">
+                <p>Breeder</p>
+                <ion-toggle [disabled]="false" [(ngModel)]="breeder"></ion-toggle>
+            </div>
+
+            <div class="group-buttons">
+
+                <button ion-button [disabled]="!chosenRole()" (click)="register()">Next</button>
+
+            </div>
+
+        </div>
+
+        <div *ngIf="phase == 6 && getUserRole() === 'pet_parent'" class="sign-up">
+
+            <p class="message">To get you started, let's set up<br>your first pet!</p>
+
+            <div class="choose-pets">
+
+                <div *ngIf="petsAdded.length === 0" class="choose-pet" (click)="addPet(petsAdded)">
+                    Pet
+                </div>
+
+                <div *ngIf="petsAdded.length !== 0" class="choose-pets">
+
+                    <img *ngFor="let pet of petsAdded" [src]="pet.pet_profile_pic" class="choose-pet"/>
+
+                    <div class="choose-pet-more" (click)="addPet(petsAdded)">
+                        Pet +
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="group-buttons">
+
+                <button class="bottom-buttons" ion-button (click)="finish()" [disabled]="petsAdded.length === 0">
+                    Next
+                </button>
+
+
+            </div>
+
+            <a *ngIf="petsAdded.length === 0" (click)="finish()" class="skip">Skip for now</a>
+
+        </div>
+
+        <div *ngIf="phase == 6 && getUserRole() === 'litter_administrator'" class="sign-up-breeder">
+
+            <p class="message">To get you started, let's set up<br>your first litter!</p>
+
+            <div class="choose-pets">
+
+                <div class="choose-pet" (click)="chooseMom()" *ngIf="mom === null">
+                    Mom
+                </div>
+
+                <img *ngIf="mom !== null" [src]="mom.pet_profile_pic" class="choose-pet"/>
+
+                <div class="choose-pet" (click)="chooseFather()" *ngIf="dad === null">
+                    Mom
+                </div>
+
+                <img *ngIf="dad !== null" [src]="dad.pet_profile_pic" class="choose-pet"/>
+
+            </div>
+
+            <div class="choose-pets">
+
+                <div *ngIf="children.length === 0" class="choose-pet" (click)="addPet(children)">
+                    Child
+                </div>
+
+                <div *ngIf="children.length !== 0" class="choose-pets">
+
+                    <img *ngFor="let pet of children" [src]="pet.pet_profile_pic" class="choose-pet"/>
+
+                    <div class="choose-pet-more" (click)="addPet(children)">
+                        Child +
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="group-buttons">
+
+                <button class="bottom-buttons" ion-button (click)="createLitter()"
+                        [disabled]="children.length === 0 || mom === null || dad === null">
+                    Next
+                </button>
+
+
+            </div>
+
+            <a *ngIf="petsAdded.length === 0" (click)="finish()" class="skip">Skip for now</a>
+
+        </div>
+
+        <div *ngIf="phase == 6 && getUserRole() === 'vet'" class="sign-up-vet">
+
+            <p class="message">We love our vets! Check to<br>see if your organization is<br>already set up in TailTrax.
+            </p>
+
+            <div (click)="searchVets()">
+
+                <ion-searchbar placeholder="Search"></ion-searchbar>
+            </div>
+
+
+            <div class="group-buttons">
+
+                <button class="bottom-buttons" ion-button (click)="next()">
+                    Next
+                </button>
+
+            </div>
+
+            <a *ngIf="petsAdded.length === 0" (click)="finish()" class="skip">Skip for now</a>
+
+        </div>
+
+        <div [formGroup]="organizationFormGroup" [hidden]="!(phase == 7 && getUserRole() === 'vet')" class="sign-up">
+
+            <ion-input type="text" formControlName="name" class="email-input"
+                       placeholder="Name"></ion-input>
+
+            <ion-input type="tel" formControlName="phone" class="email-input"
+                       placeholder="Phone"></ion-input>
+
+            <ion-input type="text" formControlName="website" class="email-input"
+                       placeholder="Website"></ion-input>
+
+            <ion-input type="text" formControlName="email" class="email-input"
+                       placeholder="Email"></ion-input>
+
+            <ion-input id="autocomplete" #autocomplete placeholder="Enter your address"
+                       type="text" class="email-input"></ion-input>
+
+
+            <div class="group-buttons">
+
+                <button class="bottom-buttons" [disabled]="!organizationFormGroup.valid" ion-button
+                        (click)="createBusiness()">
+                    Next
+                </button>
+
+            </div>
+
+            <a (click)="finish()" class="skip">Skip for now</a>
+
+        </div>
+
+
+    </div>
+
+</ion-content>

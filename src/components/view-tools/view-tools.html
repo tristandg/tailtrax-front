@@ -1,0 +1,37 @@
+<!-- Generated template for the FindServiceComponent component -->
+<div>
+    <p class="find-service">Tools</p>
+
+    <div class="all-services">
+        <div class="find-services">
+
+            <a class="service-block" (click)="viewPatientDatabase()">
+                <div class="service"></div>
+                Patient <br>Database
+            </a>
+            <a class="service-block"  (click)="viewBreederDatabase()">
+                <div class="service"></div>
+                Breeder <br>Database
+            </a>
+            <a class="service-block">
+                <div class="service"></div>
+                Vet Database
+            </a>
+        </div>
+
+        <div class="find-services">
+
+            <a class="service-block">
+                <div class="service" (click)="sendAlert()"></div>
+                Send an Alert
+            </a>
+            <a class="service-block">
+                <div class="service-empty" (click)="sendAlert()"></div>
+
+            </a>
+            <a class="service-block">
+                <div class="service-empty" (click)="sendAlert()"></div>
+            </a>
+        </div>
+    </div>
+</div>

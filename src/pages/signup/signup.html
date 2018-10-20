@@ -1,0 +1,44 @@
+<div class="background">
+
+    <div>
+        <img class="logo" src="/assets/logo.png"/>
+    </div>
+
+    <div class="inputs">
+
+        <input type="text" class="name no-radius" placeholder="First and Last Name">
+
+        <input type="text" class="email no-radius" placeholder="Email">
+
+        <input type="password" class="password no-radius" placeholder="Password">
+
+        <button ion-button class="signup-button" (click)="join()">Join</button>
+
+    </div>
+
+
+    <button ion-button class="facebook-button"><img class="facebook-icon" src="/assets/facebook.png">Sign Up With
+        Facebook
+    </button>
+
+    <div class="remember-me" text-center>
+        <ion-label>
+            <ion-checkbox></ion-checkbox>
+            I am at least 18 years of age
+        </ion-label>
+        <ion-label>
+            <ion-checkbox></ion-checkbox>
+            I am under the age of 18
+        </ion-label>
+
+    </div>
+
+    <ion-row text-center class="bottom-bar">
+        <ion-col>
+            <p class="already-have-account">Already have an account?</p>
+            <p (click)="signIn()">Sign In</p>
+        </ion-col>
+    </ion-row>
+
+
+</div>

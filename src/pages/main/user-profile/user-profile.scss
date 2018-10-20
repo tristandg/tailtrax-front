@@ -1,0 +1,54 @@
+page-user-profile {
+
+  ion-content {
+    background-color: #f2f3f8 !important;
+  }
+  .profile-header {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100px;
+    margin-left: 25px;
+
+    .profile-image {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+
+    .profile-name {
+      margin-left: 10px;
+      flex-direction: column;
+
+      .name {
+        font-size: 20px;
+        display: block;
+      }
+
+      .state {
+        line-height: .9;
+        display: block;
+      }
+    }
+  }
+
+
+  .add-dog {
+    position: fixed;
+    right: 10px;
+    bottom: 90px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+
+  }
+
+  .scroll {
+
+    height: 100%;
+
+  }
+
+}

@@ -1,0 +1,36 @@
+page-search-vets {
+
+  .vet-card {
+
+    .business-picture {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: solid 1px lightgray;
+      margin-right: 10px;
+    }
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+    .information {
+
+      display: flex;
+      flex-direction: column;
+
+      .business-location {
+
+        font-size: 12px;
+      }
+
+      .business-name {
+
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+    }
+  }
+}

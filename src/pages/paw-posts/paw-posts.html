@@ -1,0 +1,106 @@
+<!--
+  Generated template for the PawPostsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+
+
+        <ion-title (click)="goToTop()">Paw Posts</ion-title>
+
+        <ion-buttons end>
+            <button ion-button icon-only (click)="createPawPost()">
+
+                <ion-icon name="create"></ion-icon>
+
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+    <ion-refresher (ionRefresh)="getPawPosts($event)">
+
+        <ion-refresher-content>
+
+        </ion-refresher-content>
+
+    </ion-refresher>
+
+    <ion-list align-items-center>
+
+        <ion-card *ngFor="let post of socialPosts" class="main-card">
+
+            <div *ngIf="post.media !==null">
+
+                <div class="profile-header" (click)="viewProfile(post.user)">
+
+                    <div class="left">
+                        <img class="profile-image" [src]="post.user.profile_image"/>
+
+                        <div class="profile-name">
+
+                            <span class="name">{{post.user.first_name}} {{post.user.last_name}}</span>
+                            <span class="handle">@{{post.user.username}}</span>
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="right">
+                        <span>{{post.created_at | timeAgo}}</span>
+                    </div>
+
+                </div>
+
+                <div class="photo">
+                    <img [src]="post.media">
+                </div>
+
+                <div class="caption">
+                    <p>{{post.content}}</p>
+                </div>
+
+                <comment [post]="post"></comment>
+            </div>
+
+            <div *ngIf="post.media ===null">
+                <div class="profile-header" (click)="viewProfile(post.user)">
+
+                    <div class="left">
+                        <img class="profile-image" [src]="post.user.profile_image"/>
+
+                        <div class="profile-name">
+
+                            <span class="name">{{post.user.first_name}} {{post.user.last_name}}</span>
+                            <span class="handle">@{{post.user.username}}</span>
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="right">
+                        <span>{{post.created_at | timeAgo}}</span>
+                    </div>
+
+                </div>
+
+                <div class="text-post">
+                    <p>{{post.content}}</p>
+                </div>
+
+                <comment style="border-top: solid 1px lightgray" [post]="post"></comment>
+            </div>
+
+        </ion-card>
+
+    </ion-list>
+
+</ion-content>

@@ -1,0 +1,33 @@
+page-choose-dog {
+
+
+  .dog-item {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 70px;
+
+    .dog-image {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 1px solid gray;
+    }
+
+    .dog-info {
+      margin-left: 10px;
+      flex-direction: column;
+
+      .name {
+        font-size: 20px;
+        display: block;
+      }
+      .state {
+        font-style: normal;
+        display: block;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,105 @@
+<!--
+  Generated template for the ViewConversationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{conversation.users[0].first_name}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-bounce>
+
+
+    <ion-scroll class="message-scroll" scrollY="true" #messageScroll>
+
+        <div *ngFor="let message of messages">
+
+
+            <div class="child" *ngIf="message.media === null">
+                <div class="message-left" *ngIf="message.user.id === currentUser.id">
+
+                    <img class="profile-image" [src]="message.user.profile_image"/>
+                    <div class="message-body">
+                        <p>{{message.content}}</p>
+                    </div>
+                </div>
+                <div class="message-right" *ngIf="message.user.id !== currentUser.id">
+
+                    <img class="profile-image" [src]="message.user.profile_image"/>
+                    <div class="message-body">
+                        <p>{{message.content}}</p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="child" *ngIf="message.media !== null && message.media_type === 'image'">
+                <div class="message-left" *ngIf="message.user.id === currentUser.id">
+
+                    <img class="profile-image" [src]="message.user.profile_image"/>
+
+                    <div class="message-body-image">
+
+                        <img [src]="message.media">
+                    </div>
+                </div>
+                <div class="message-right" *ngIf="message.user.id !== currentUser.id">
+
+                    <img class="profile-image" [src]="message.user.profile_image"/>
+
+                    <div class="message-body-image">
+                        <img [src]="message.media">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="child" *ngIf="message.media !== null && message.media_type === 'video'">
+                <div class="message-left" *ngIf="message.user.id === currentUser.id">
+
+                    <img class="profile-image" [src]="message.user.profile_image"/>
+
+                    <div class="message-body-image" text-left="">
+
+                        <ion-icon (click)="playVideo(message.media)" name="play"></ion-icon>
+
+
+                    </div>
+                </div>
+                <div class="message-right" *ngIf="message.user.id !== currentUser.id">
+
+                    <img class="profile-image" [src]="message.user.profile_image"/>
+
+                    <div class="message-body-image" text-right>
+
+                        <ion-icon (click)="playVideo(message.media)" name="play"></ion-icon>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </ion-scroll>
+
+
+    <div class="message-box" id="message-box" (click)="scrollToBottom()">
+        <ion-textarea placeholder="Message..." autosize [(ngModel)]="message"></ion-textarea>
+        <button ion-button class="send-button" [disabled]="!canSend()" (click)="sendMessage()">
+            <ion-icon name="arrow-round-up"></ion-icon>
+        </button>
+        <button ion-button class="camera-button" (click)="sendPhoto()">
+            <ion-icon name="camera"></ion-icon>
+        </button>
+    </div>
+
+</ion-content>

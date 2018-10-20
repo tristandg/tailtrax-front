@@ -1,0 +1,15 @@
+.green-toast {
+
+  .toast-message {
+    background: white !important;
+    color: map_get($colors, primary) !important;
+  }
+}
+
+.red-toast {
+
+  .toast-message {
+    background: indianred !important;
+    color: white;
+  }
+}

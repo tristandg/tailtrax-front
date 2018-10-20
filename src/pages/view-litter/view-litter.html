@@ -1,0 +1,56 @@
+<!--
+  Generated template for the ViewLitterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-buttons start>
+            <button ion-button icon-only (click)="viewController.dismiss()">
+                Close
+            </button>
+        </ion-buttons>
+        <ion-title>{{litter.name}}'s Family</ion-title>
+    </ion-navbar>
+
+
+</ion-header>
+
+<ion-content padding>
+
+    <p class="parents-header">Parents</p>
+
+    <div class="parents">
+
+
+        <div class="father" (click)="viewDog(litter.pet_dad)">
+            <img class="profile-image" [src]="litter.pet_dad.pet_profile_pic"/>
+
+            <p>{{litter.pet_dad.name}}</p>
+        </div>
+
+
+        <div class="mother" (click)="viewDog(litter.pet_mom)">
+            <img class="profile-image"  [src]="litter.pet_mom.pet_profile_pic"/>
+            <p>{{litter.pet_mom.name}}</p>
+        </div>
+
+
+    </div>
+
+    <p class="parents-header">Siblings</p>
+
+    
+    <div class="parents">
+
+        <div class="father" *ngFor="let puppy of litter.pets"  (click)="viewDog(puppy)">
+            <img class="profile-image" [src]="puppy.pet_profile_pic"/>
+
+            <p>{{puppy.name}}</p>
+        </div>
+
+    </div>
+
+</ion-content>
